@@ -254,5 +254,8 @@ public class QuickQSPanel extends QSPanel {
                         R.id.expand_indicator);
             }
         }
+        @Override
+        public void updateSettings() {
+        }
     }
 }
