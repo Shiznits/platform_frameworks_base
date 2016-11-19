@@ -119,4 +119,13 @@
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute">Peeking notification from <xliff:g id="string">%s</xliff:g> are snoozing for 1 minute.</string>
     <string name="heads_up_snooze_message">Peeking notification from <xliff:g id="string">%s</xliff:g> are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
+
+    <!-- Volume stream title names -->
+    <string name="stream_title_call">Call</string>
+    <string name="stream_title_system">System</string>
+    <string name="stream_title_ring">Ring</string>
+    <string name="stream_title_media">Media</string>
+    <string name="stream_title_alarm">Alarm</string>
+    <string name="stream_title_notification">Notification</string>
+    <string name="stream_title_bluetooth">Bluetooth</string>
 </resources>
