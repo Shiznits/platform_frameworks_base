@@ -551,7 +551,6 @@ public class OpaLayout extends FrameLayout implements ButtonDispatcher.ButtonInt
             case 3: {
                 if (mAnimationState == OpaLayout.ANIMATION_STATE_DIAMOND) {
                     final long elapsedRealtime = SystemClock.elapsedRealtime();
-                    final long mStartTime = mStartTime;
                     removeCallbacks(mRetract);
                     postDelayed(mRetract, 100L - (elapsedRealtime - mStartTime));
                     removeCallbacks(mCheckLongPress);

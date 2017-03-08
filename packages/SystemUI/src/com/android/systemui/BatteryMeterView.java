@@ -54,12 +54,12 @@ public class BatteryMeterView extends ImageView implements
                 defStyle, 0);
         final int frameColor = atts.getColor(R.styleable.BatteryMeterView_frameColor,
                 context.getColor(R.color.batterymeter_frame_color));
-        mDrawable = new BatteryMeterDrawable(context, new Handler(), frameColor);
+        //mDrawable = new BatteryMeterDrawable(context, new Handler(), frameColor);
         atts.recycle();
 
         mSlotBattery = context.getString(
                 com.android.internal.R.string.status_bar_battery);
-        setImageDrawable(mDrawable);
+        //setImageDrawable(mDrawable);
         
          mContext = context;
          mFrameColor = frameColor;
@@ -85,7 +85,7 @@ public class BatteryMeterView extends ImageView implements
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         mBatteryController.addStateChangedCallback(this);
-        mDrawable.startListening();
+        //mDrawable.startListening();
         TunerService.get(getContext()).addTunable(this, StatusBarIconController.ICON_BLACKLIST,
                 STATUS_BAR_BATTERY_STYLE);
     }
@@ -94,7 +94,7 @@ public class BatteryMeterView extends ImageView implements
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         mBatteryController.removeStateChangedCallback(this);
-        mDrawable.stopListening();
+        //mDrawable.stopListening();
         TunerService.get(getContext()).removeTunable(this);
     }
 
@@ -112,11 +112,11 @@ public class BatteryMeterView extends ImageView implements
 
     public void setBatteryController(BatteryController mBatteryController) {
         this.mBatteryController = mBatteryController;
-        mDrawable.setBatteryController(mBatteryController);
+        //mDrawable.setBatteryController(mBatteryController);
     }
 
     public void setDarkIntensity(float f) {
-        mDrawable.setDarkIntensity(f);
+        //mDrawable.setDarkIntensity(f);
     }
 
     private void updateBatteryStyle(String styleStr) {
@@ -130,8 +130,8 @@ public class BatteryMeterView extends ImageView implements
                 setImageDrawable(null);
                 break;
             default:
-                mDrawable = new BatteryMeterDrawable(mContext, new Handler(), mFrameColor);
-                setImageDrawable(mDrawable);
+                //mDrawable = new BatteryMeterDrawable(mContext, new Handler(), mFrameColor);
+               // setImageDrawable(mDrawable);
                 setVisibility(View.VISIBLE);
                 break;
         }
@@ -140,7 +140,7 @@ public class BatteryMeterView extends ImageView implements
     }
 
     private void restoreDrawableAttributes() {
-        mDrawable.setBatteryController(mBatteryController);
-        mDrawable.startListening();
+        //mDrawable.setBatteryController(mBatteryController);
+        //mDrawable.startListening();
     }
 }
